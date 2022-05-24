@@ -7,10 +7,13 @@ public
 .local
 
 components.d.ts
-bulma-colors.js
 generated-vars.sass
 generated-fallback.css
 
 **/*.svg
 **/*.sh
+
+.eslint*
+.prettier*
+.stylelint*
 

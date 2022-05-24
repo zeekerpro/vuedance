@@ -18,7 +18,7 @@ export default defineConfig(({command, mode}: ConfigEnv) :UserConfig => {
 
 	const envDir = pathResolve("config/environments/");
 
-  const rawEnv = loadEnv(mode, envDir);
+  	const rawEnv = loadEnv(mode, envDir);
 
 	// The boolean type read by loadEnv is a string. This function can be converted to boolean type
 	const env = assignEnv(rawEnv);

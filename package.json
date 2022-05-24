@@ -3,6 +3,7 @@
 	"private": true,
 	"version": "0.0.0",
 	"scripts": {
+		"boostrap": "pnpm install",
 		"dev": "run-p dev:vite dev:json-server",
 		"dev:vite": "vite",
 		"dev:json-server": "json-server --read-only --routes ./json-server/routes.json --port 8080 --delay 200 --watch ./json-server/db.json",
@@ -29,7 +30,13 @@
 		"commit": "commit",
 		"release": "run-s test build release:*",
 		"release:standard-version": "standard-version",
-		"prepare": "husky install"
+		"prepare": "husky install",
+		"clean:cache": "run-p clean:lib-cache clean:vite-cache",
+		"clean:lib-cache": "rimraf node-modules/.cache",
+		"clean:vite-cache": "rimraf node-modules/.vite",
+		"clean:lib": "rimraf node-modules",
+		"clean:lib-lock": "rimraf pnpm-lock && rimraf package.lock.json",
+		"reinstall": "run-s clean:lib-lock clean:lib boostrap"
 	},
 	"lint-staged": {
 		"*.{ts,tsx,js,jsx}": [
@@ -87,6 +94,7 @@
 		"postcss": "^8.4.14",
 		"postcss-html": "^1.4.1",
 		"prettier": "^2.6.2",
+		"rimraf": "^3.0.2",
 		"rollup": "^2.74.1",
 		"rollup-plugin-visualizer": "^5.6.0",
 		"stylelint": "^14.8.2",
