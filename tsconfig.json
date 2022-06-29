@@ -32,5 +32,5 @@
 		"config/**/*.ts",
 		"config/**/*.d.ts",
 		"vite.config.ts"
-  ],
+  ]
 }
