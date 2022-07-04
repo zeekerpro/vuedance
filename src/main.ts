@@ -1,4 +1,9 @@
-import { createApp } from 'vue';
-import App from './App.vue';
+import { bootstrap } from './bootstrap'
 
-createApp(App).mount('#app');
+bootstrap().then(async (vuedance) => {
+	// wait for the app to be ready
+	await vuedance.router.isReady()
+
+	// finally mount the app to the dom
+	vuedance.app.mount('#app')
+})

@@ -67,7 +67,8 @@
 		"@iconify/iconify": "^2.2.1",
 		"dayjs": "^1.11.3",
 		"vue": "^3.2.37",
-		"vue-i18n": "^9.1.10"
+		"vue-i18n": "^9.1.10",
+		"vue-router": "^4.0.16"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "^17.0.3",
